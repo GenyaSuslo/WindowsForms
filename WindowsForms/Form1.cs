@@ -16,5 +16,19 @@ namespace WindowsForms
 		{
 			InitializeComponent();
 		}
+
+		private void timer2_Tick(object sender, EventArgs e)
+		{
+			label3.Text = DateTime.Now.ToString("HH:mm:ss ");
+			if(cbShowDate.Checked)label3.Text+=$"\n{DateTime.Now.ToString("dd.MM.yyyy")}";
+		}
+
+		private void label3_DoubleClick(object sender, EventArgs e)
+		{
+			this.FormBorderStyle = FormBorderStyle.Sizable;
+			this.TransparencyKey = Color.AliceBlue;
+			this.ShowInTaskbar = true;
+			this.cbShowDate.Visible = true;
+		}
 	}
 }

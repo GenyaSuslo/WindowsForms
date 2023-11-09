@@ -29,6 +29,24 @@ namespace WindowsForms
 			this.TransparencyKey = Color.AliceBlue;
 			this.ShowInTaskbar = true;
 			this.cbShowDate.Visible = true;
-		}
-	}
+			this.button1.Visible = true;
+			
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.TransparencyKey = Control.DefaultBackColor;
+            this.ShowInTaskbar = false;
+            this.cbShowDate.Visible = false;
+            this.button1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+			this.Close();
+        }
+
+    }
 }

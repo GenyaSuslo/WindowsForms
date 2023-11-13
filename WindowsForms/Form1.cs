@@ -45,6 +45,7 @@ namespace WindowsForms
 
 			this.btnHideControls.Visible = visible_controls;
 			this.btnClose.Visible = visible_controls;
+			this.btnFont.Visible = visible_controls;
 			//this.notifyIcon1.Visible = !visible_controls;
 
 			this.showControlsToolStripMenuItem.Checked = visible_controls;
@@ -113,6 +114,25 @@ namespace WindowsForms
 		private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			label3_DoubleClick(sender, e);
+		}
+
+		private void btnFont_Click(object sender, EventArgs e)
+		{
+			Font font = new Font();
+			font.ShowDialog(this);
+			label3.Font = font.OldFont;
+		}
+
+		private void foregroundToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			colorDialog1.ShowDialog(this);
+			label3.ForeColor = colorDialog1.Color;
+		}
+
+		private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			colorDialog1.ShowDialog(this);
+			label3.BackColor = colorDialog1.Color;
 		}
 	}
 }

@@ -55,11 +55,11 @@
 			this.label3.AutoSize = true;
 			this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.label3.ContextMenuStrip = this.contextMenuStrip1;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.label3.Location = new System.Drawing.Point(32, 25);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(112, 42);
+			this.label3.Size = new System.Drawing.Size(144, 55);
 			this.label3.TabIndex = 0;
 			this.label3.Text = "Clock";
 			this.label3.DoubleClick += new System.EventHandler(this.label3_DoubleClick);

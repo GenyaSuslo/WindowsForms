@@ -26,9 +26,10 @@ namespace WindowsForms
 			{
 				if(i.Split('\\').Last().Contains(".ttf"))this.cbFont.Items.Add(i.Split('\\').Last());//условие для вывода определенного типа файла
 			}
+			cbFont.SelectedIndex = 1;
 			OldFont = oldFont;
 			numericUpDownFontSize.Value = (decimal)OldFont.Size;
-			cbFont.SelectedItem = oldFont.Name;
+			//cbFont.SelectedItem = oldFont.Name;
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -50,6 +51,11 @@ namespace WindowsForms
 			NewFont = new System.Drawing.Font(pfs.Families[0],(int)numericUpDownFontSize.Value);
 			//NewFont = new System.Drawing.Font(pfs.Families[0],lblExample.Font.Size);
 			lblExample.Font = NewFont;
+		}
+
+		private void numericUpDownFontSize_ValueChanged(object sender, EventArgs e)
+		{
+			comboBox1_SelectionChangeCommitted(sender, e);
 		}
 	}
 }

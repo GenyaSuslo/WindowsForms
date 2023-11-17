@@ -14,6 +14,7 @@ namespace WindowsForms
 {
 	public partial class Font : Form
 	{
+		public String FontFile { get; set; }
 		public System.Drawing.Font NewFont	{ get; set; }
 		public System.Drawing.Font OldFont	{ get; set; }
 		public Font(System.Drawing.Font oldFont)
@@ -25,11 +26,16 @@ namespace WindowsForms
 			foreach (string i in Directory.GetFiles(currentDirectory))
 			{
 				if(i.Split('\\').Last().Contains(".ttf"))this.cbFont.Items.Add(i.Split('\\').Last());//условие для вывода определенного типа файла
+				if(i.Split('\\').Last().Contains(".TTF"))this.cbFont.Items.Add(i.Split('\\').Last());//условие для вывода определенного типа файла
 			}
 			cbFont.SelectedIndex = 1;
 			OldFont = oldFont;
 			numericUpDownFontSize.Value = (decimal)OldFont.Size;
 			//cbFont.SelectedItem = oldFont.Name;
+		}
+		public int GetFontSize()
+		{
+			return (int)numericUpDownFontSize.Value;
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -41,6 +47,7 @@ namespace WindowsForms
 		{
 			//NewFont.Size = (int)numericUpDownFontSize.Value;
 			OldFont = NewFont;
+			FontFile = cbFont.SelectedItem.ToString();
 			this.Close();
 		}
 
